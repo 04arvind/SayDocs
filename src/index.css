@@ -1,25 +1,126 @@
 @import "tailwindcss";
 
 html,
-body{
+body {
   height: 100%;
-  border-color: rgb(10 10 15);
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
-html{
-  display: table;
-  margin:auto;
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
 }
-body{
-  display: table-cell;
-  vertical-align: middle;
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animation for microphone pulse */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+    opacity: 1;
+  }
+  40%, 50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+/* Enhanced Quill editor styles */
 .ql-toolbar {
-  background-color: white !important; /* Ensures toolbar stays white */
-  border-radius: 8px;
-  color: #1F2937 !important; /* Dark text/icons for visibility */
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-bottom: none !important;
+  border-radius: 12px 12px 0 0 !important;
+  color: #1F2937 !important;
+}
+
+.ql-container {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: none !important;
+  border-radius: 0 0 12px 12px !important;
+  color: white !important;
+}
+
+.ql-editor {
+  color: white !important;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .ql-toolbar button,
 .ql-toolbar .ql-picker {
-  color: #1F2937 !important; /* Dark color for icons and text */
+  color: #1F2937 !important;
+}
+
+.ql-toolbar button:hover,
+.ql-toolbar .ql-picker:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
 }
