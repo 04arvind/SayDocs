@@ -2,6 +2,7 @@ import "regenerator-runtime/runtime.js";
 import { useState } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import { jsPDF } from "jspdf";
+// import QuillEditor from "./QuillEditor";
 
 const SayDocs = () => {
     const [isRecording, setIsRecording] = useState(false);
@@ -94,7 +95,8 @@ const SayDocs = () => {
                     <a href="#" className="block text-gray-300 hover:text-white">About</a>
                 </div>
             )}
-
+            
+            
             <div className="flex-1 overflow-auto p-6 space-y-4 flex flex-col items-center justify-center">
                 <div className="w-full max-w-2xl p-4 bg-gray-700 rounded-xl text-left text-gray-300 h-40 overflow-y-auto">
                     {transcript || "Your speech will appear here..."}
@@ -110,7 +112,7 @@ const SayDocs = () => {
             onClick={isRecording ? handleStop : handleStart}>
             {isRecording ? "⏹️" : "🎤"}
         </button>
-        <textarea 
+        <textarea
             className="flex-1 p-3 bg-gray-700 rounded-lg text-white resize-none h-16 w-full" 
             value={transcript} 
             onChange={(e) => setTranscript(e.target.value)}
@@ -141,3 +143,7 @@ const SayDocs = () => {
 };
 
 export default SayDocs;
+
+
+
+

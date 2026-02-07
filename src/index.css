@@ -13,3 +13,13 @@ body{
   display: table-cell;
   vertical-align: middle;
 }
+.ql-toolbar {
+  background-color: white !important; /* Ensures toolbar stays white */
+  border-radius: 8px;
+  color: #1F2937 !important; /* Dark text/icons for visibility */
+}
+
+.ql-toolbar button,
+.ql-toolbar .ql-picker {
+  color: #1F2937 !important; /* Dark color for icons and text */
+}
