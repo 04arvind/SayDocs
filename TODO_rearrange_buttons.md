@@ -1,0 +1,13 @@
+- [x] Rearrange buttons in Hero.jsx: Put Start Recording and Upload Audio in the same row, with Language Selector below.
+- [x] Fix LanguageSelector dropdown on small screens: Limit languages to English (US, UK) and Spanish to prevent hiding behind image.
+- [x] On small screens, remove the glass-card mockup and add a new image from public folder to the landing page.
+- [x] Add 3D animation to background spheres on small screens.
+- [x] Remove "Vocal Recognition Active" badge from Hero component.
+- [x] Reduce height between Hero and Footer by decreasing bottom padding.
+- [x] Adjust Hero height on small screens to reduce gap with footer.
+- [x] Reposition mic animation to top center on small screens.
+- [x] Change h1 text to "Voice to document" on small screens and keep full text on larger screens.
+- [x] Move mic animation to top right on small screens.
+- [x] Remove mic animation on small screens for better responsiveness.
+- [x] Reduce gap between footer and language selector tab.
+- [x] Reduce footer padding and margins for smaller screens to minimize overall gap.
