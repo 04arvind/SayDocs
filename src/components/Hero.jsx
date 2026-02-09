@@ -1,29 +1,13 @@
 import { Mic, Upload, Play } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import Waves from './Waves';
 
 const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageChange }) => {
   return (
-    <div className="relative min-h-0 lg:min-h-screen flex flex-col lg:flex-row items-center justify-center px-8 lg:px-24 pt-10 pb-0 lg:pb-2 gap-12">
-      <div className="absolute inset-0 pointer-events-none z-0 animate-pulse lg:animate-none">
-        <div className="absolute top-20 left-[10%] w-32 h-32 glass-sphere opacity-40 blur-[1px] animate-pulse lg:animate-none"></div>
-        <div className="absolute bottom-40 left-[5%] w-48 h-48 glass-sphere opacity-20 blur-[2px] animate-pulse lg:animate-none"></div>
-        <div className="absolute top-1/2 right-[15%] w-24 h-24 glass-sphere opacity-30 blur-[1px] animate-pulse lg:animate-none"></div>
-        <div className="absolute -bottom-10 right-[20%] w-64 h-64 glass-sphere opacity-10 animate-pulse lg:animate-none"></div>
-        <div className="absolute inset-0 block lg:hidden z-0">
-          <svg className="w-full h-full animate-pulse" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{stopColor:'#00FFFF', stopOpacity:0.3}} />
-                <stop offset="50%" style={{stopColor:'#8A2BE2', stopOpacity:0.3}} />
-                <stop offset="100%" style={{stopColor:'#00FFFF', stopOpacity:0.3}} />
-              </linearGradient>
-            </defs>
-            <path fill="url(#waveGradient)" d="M0,160 Q360,120 720,160 T1440,160 V320 H0 Z" />
-            <path fill="url(#waveGradient)" d="M0,200 Q360,160 720,200 T1440,200 V320 H0 Z" opacity="0.5" />
-            <path fill="url(#waveGradient)" d="M0,240 Q360,200 720,240 T1440,240 V320 H0 Z" opacity="0.2" />
-          </svg>
-        </div>
-      </div>
+    <div className="relative min-h-0 lg:min-h-screen flex flex-col lg:flex-row items-center justify-center px-8 lg:px-24 pt-10 pb-0 lg:pb-2 gap-12 overflow-hidden">
+      {/* 3D Animated Background */}
+      <Waves />
+
       <div className="w-full lg:w-1/2 flex flex-col items-start text-left relative z-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter mb-8">
           <span className="block lg:hidden">From voice to document in real time</span>
@@ -90,14 +74,14 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
           <div className="relative w-40 h-40 md:w-56 md:h-56">
             <div className="absolute inset-0 mic-3d-texture rounded-full p-6 flex items-center justify-center border border-white/10">
               <div className="relative w-full h-full rounded-full overflow-hidden bg-[radial-gradient(circle_at_50%_50%,_#333_0%,_#000_100%)] flex items-center justify-center shadow-inner">
-                <div className="absolute inset-0 opacity-20" style={{backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '4px 4px'}}></div>
+                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '4px 4px' }}></div>
                 <Mic className="text-7xl md:text-9xl text-primary/80 drop-shadow-[0_0_15px_rgba(84,23,207,0.8)]" />
                 <div className="absolute bottom-10 left-0 right-0 flex justify-center items-end gap-1 px-4 h-12">
-                  <div className="w-1 bg-primary/60 rounded-full animate-[wave_1.2s_infinite]" style={{height: '40%'}}></div>
-                  <div className="w-1 bg-primary rounded-full animate-[wave_0.8s_infinite]" style={{height: '70%'}}></div>
-                  <div className="w-1 bg-white rounded-full animate-[wave_1s_infinite]" style={{height: '100%'}}></div>
-                  <div className="w-1 bg-primary rounded-full animate-[wave_0.9s_infinite]" style={{height: '60%'}}></div>
-                  <div className="w-1 bg-primary/60 rounded-full animate-[wave_1.1s_infinite]" style={{height: '30%'}}></div>
+                  <div className="w-1 bg-primary/60 rounded-full animate-[wave_1.2s_infinite]" style={{ height: '40%' }}></div>
+                  <div className="w-1 bg-primary rounded-full animate-[wave_0.8s_infinite]" style={{ height: '70%' }}></div>
+                  <div className="w-1 bg-white rounded-full animate-[wave_1s_infinite]" style={{ height: '100%' }}></div>
+                  <div className="w-1 bg-primary rounded-full animate-[wave_0.9s_infinite]" style={{ height: '60%' }}></div>
+                  <div className="w-1 bg-primary/60 rounded-full animate-[wave_1.1s_infinite]" style={{ height: '30%' }}></div>
                 </div>
               </div>
             </div>
