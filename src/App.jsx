@@ -75,7 +75,7 @@ const App = () => {
 
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white">
+        <div className="min-h-screen mesh-gradient text-white">
             <Navbar />
             {currentView === "hero" ? (
                 <Hero
@@ -85,8 +85,8 @@ const App = () => {
                     onLanguageChange={setSelectedLanguage}
                 />
             ) : (
-                <div className="container mx-auto px-4 py-4 lg:py-8">
-                    <div className="space-y-4 lg:space-y-8">
+                <div className="container mx-auto px-4 py-6 sm:py-8 lg:py-12">
+                    <div className="space-y-6 sm:space-y-8 lg:space-y-12">
                         <div className="flex justify-center">
                             <SpeechRecorder
                                 isRecording={isRecording}
