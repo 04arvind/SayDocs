@@ -75,7 +75,7 @@ const LinearAudioWave = () => {
 
     return (
         <mesh ref={meshRef} position={[0, 0, 0]}>
-            <planeGeometry args={[22, 2.0, 512, 10]} />
+            <planeGeometry args={[100, 2.0, 512, 10]} />
             <shaderMaterial
                 vertexShader={vertexShader}
                 fragmentShader={fragmentShader}

@@ -13,21 +13,21 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
           <span className="block lg:hidden">From voice to document in real time</span>
           <span className="hidden lg:block">From voice to document in real time</span>
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl mb-12 font-light leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-white max-w-xl mb-12 font-light leading-relaxed">
           Convert your speech into editable text instantly. Download as PDF, DOCX, or TXT with professional formatting.
         </p>
         <div className="flex flex-col items-center gap-4 lg:gap-6 w-full">
           <div className="flex flex-row items-center gap-4 w-full justify-center">
             <button
               onClick={onStartRecording}
-              className="bg-primary text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold glow-button flex items-center justify-center gap-2 flex-1 sm:flex-none"
+              className="bg-primary text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold glow-button flex items-center justify-center gap-2 flex-1 sm:flex-none shadow-lg shadow-primary/50"
             >
               <Play className="h-4 w-4 sm:h-5 sm:w-5" />
               Start Recording
             </button>
             <button
               onClick={onUploadAudio}
-              className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold border border-white/10 hover:bg-white/5 transition-all flex-1 sm:flex-none"
+              className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold border border-white/20 hover:bg-white/10 transition-all flex-1 sm:flex-none shadow-lg shadow-white/10"
             >
               <Upload className="h-4 w-4 sm:h-5 sm:w-5" />
               Upload Audio
