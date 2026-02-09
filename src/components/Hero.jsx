@@ -9,25 +9,25 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
       <Waves />
 
       <div className="w-full lg:w-1/2 flex flex-col items-start text-left relative z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter mb-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter mb-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
           <span className="block lg:hidden">From voice to document in real time</span>
           <span className="hidden lg:block">From voice to document in real time</span>
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl mb-12 font-light leading-relaxed">
+        <p className=" text-base sm:text-lg md:text-xl text-white max-w-xl mb-12 font-light leading-relaxed drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
           Convert your speech into editable text instantly. Download as PDF, DOCX, or TXT with professional formatting.
         </p>
         <div className="flex flex-col items-center gap-4 lg:gap-6 w-full">
           <div className="flex flex-row items-center gap-4 w-full justify-center">
             <button
               onClick={onStartRecording}
-              className="bg-primary text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold glow-button flex items-center justify-center gap-2 flex-1 sm:flex-none"
+              className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold flex items-center justify-center gap-2 flex-1 sm:flex-none shadow-lg shadow-gray-700/50"
             >
               <Play className="h-4 w-4 sm:h-5 sm:w-5" />
               Start Recording
             </button>
             <button
               onClick={onUploadAudio}
-              className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold border border-white/10 hover:bg-white/5 transition-all flex-1 sm:flex-none"
+              className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold flex items-center justify-center gap-3 flex-1 sm:flex-none shadow-lg shadow-gray-700/50"
             >
               <Upload className="h-4 w-4 sm:h-5 sm:w-5" />
               Upload Audio
@@ -38,7 +38,7 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-1/2 relative flex justify-center items-center h-[100px] lg:h-[500px]">
+      <div className="w-full lg:w-1/2 relative flex justify-center items-center h-[80px] lg:h-[500px]">
         {/* Glass card visible on large screens */}
         <div className="hidden lg:block relative z-20 w-full max-w-lg glass-card rounded-xl overflow-hidden shadow-2xl border border-white/20 transform lg:rotate-2 lg:-translate-x-10">
           <div className="bg-white/5 border-b border-white/10 px-4 py-3 flex items-center gap-2">
@@ -47,7 +47,7 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
               <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
               <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
             </div>
-            <div className="flex-1 mx-4 bg-black/20 rounded py-1 px-3 text-[10px] text-gray-500 text-center font-mono">app.saydocs.ai/live-session</div>
+            <div className="flex-1 mx-4 bg-black/20 rounded py-1 px-3 text-[10px] text-gray-500 text-center font-mono">https://saydocs.vercel.app</div>
           </div>
           <div className="p-6 space-y-4 bg-gradient-to-br from-transparent to-primary/5">
             <div className="flex items-center gap-3 border-b border-white/5 pb-4">
