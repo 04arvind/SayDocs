@@ -1,17 +1,35 @@
-import { Mic, Menu } from 'lucide-react';
-import { useState } from 'react';
+import { Mic } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navbar = ({ onHomeClick, showBackToHome }) => {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    if (onHomeClick) {
+      onHomeClick();
+      return;
+    }
+
+    navigate('/');
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 lg:h-16">
-          <div className="flex items-center space-x-2">
+          <button type="button" onClick={handleHomeClick} className="flex items-center space-x-2 text-left">
             <Mic className="h-6 w-6 lg:h-8 lg:w-8 text-blue-400" />
             <span className="text-xl lg:text-2xl font-bold text-white">SayDocs</span>
-          </div>
+          </button>
+          {showBackToHome && (
+            <button
+              type="button"
+              onClick={handleHomeClick}
+              className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white hover:bg-white/10"
+            >
+              Back to Home
+            </button>
+          )}
           {/* <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">How It Works</a>
             <a href="#pricing" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Pricing</a>

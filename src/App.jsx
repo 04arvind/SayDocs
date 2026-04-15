@@ -1,6 +1,7 @@
 import "regenerator-runtime/runtime.js";
 import { useState, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { inject } from '@vercel/analytics';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -16,15 +17,23 @@ const App = () => {
     const [isRecording, setIsRecording] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState("en-US");
     const [transcript, setTranscript] = useState("");
-    const [currentView, setCurrentView] = useState("hero"); // "hero", "recorder"
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    const { transcript: liveTranscript, interimTranscript, resetTranscript, listening } = useSpeechRecognition();
+    const { transcript: liveTranscript, interimTranscript } = useSpeechRecognition();
 
     useEffect(() => {
         if (liveTranscript || interimTranscript) {
             setTranscript(liveTranscript + interimTranscript);
         }
     }, [liveTranscript, interimTranscript]);
+
+    useEffect(() => {
+        if (location.pathname !== "/record") {
+            setIsRecording(false);
+            SpeechRecognition.stopListening();
+        }
+    }, [location.pathname]);
 
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
         return (
@@ -39,13 +48,18 @@ const App = () => {
 
     const handleStartRecording = () => {
         setIsRecording(true);
-        setCurrentView("recorder");
+        navigate("/record");
         SpeechRecognition.startListening({ continuous: true, language: selectedLanguage });
     };
 
     const handleStopRecording = () => {
         setIsRecording(false);
         SpeechRecognition.stopListening();
+    };
+
+    const handleGoHome = () => {
+        handleStopRecording();
+        navigate("/");
     };
 
     const handleUploadAudio = () => {
@@ -76,33 +90,42 @@ const App = () => {
 
     return (
         <div className="min-h-screen mesh-gradient text-white">
-            <Navbar />
-            {currentView === "hero" ? (
-                <Hero
-                    onStartRecording={handleStartRecording}
-                    onUploadAudio={handleUploadAudio}
-                    selectedLanguage={selectedLanguage}
-                    onLanguageChange={setSelectedLanguage}
-                />
-            ) : (
-                <div className="container mx-auto px-4 py-6 sm:py-8 lg:py-12">
-                    <div className="space-y-6 sm:space-y-8 lg:space-y-12">
-                        <div className="flex justify-center">
-                            <SpeechRecorder
-                                isRecording={isRecording}
-                                onStart={handleStartRecording}
-                                onStop={handleStopRecording}
-                                selectedLanguage={selectedLanguage}
-                            />
-                        </div>
-                        <TranscriptionEditor
-                            transcript={transcript}
-                            onTranscriptChange={setTranscript}
-                            onDownload={handleDownload}
+            <Navbar onHomeClick={handleGoHome} showBackToHome={location.pathname === "/record"} />
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <Hero
+                            onStartRecording={handleStartRecording}
+                            onUploadAudio={handleUploadAudio}
+                            selectedLanguage={selectedLanguage}
+                            onLanguageChange={setSelectedLanguage}
                         />
-                    </div>
-                </div>
-            )}
+                    }
+                />
+                <Route
+                    path="/record"
+                    element={
+                        <div className="container mx-auto px-4 py-6 sm:py-8 lg:py-12">
+                            <div className="space-y-6 sm:space-y-8 lg:space-y-12">
+                                <div className="flex justify-center">
+                                    <SpeechRecorder
+                                        isRecording={isRecording}
+                                        onStart={handleStartRecording}
+                                        onStop={handleStopRecording}
+                                        selectedLanguage={selectedLanguage}
+                                    />
+                                </div>
+                                <TranscriptionEditor
+                                    transcript={transcript}
+                                    onTranscriptChange={setTranscript}
+                                    onDownload={handleDownload}
+                                />
+                            </div>
+                        </div>
+                    }
+                />
+            </Routes>
             {/* <Footer /> */}
         </div>
     );
