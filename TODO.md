@@ -1,45 +1,18 @@
-# SayDocs Enhancement Plan
+# Task Progress: Increase LanguageSelector size and Hero page height
 
-## Step 1: Update Dependencies ✅
+## Completed Steps ✓
 
-- Add lucide-react, @vercel/analytics, docx, and other necessary packages to package.json.
+1. Edit SayDocs/src/components/LanguageSelector.jsx - Increased button py-2 → py-3, added min-w-[160px]; dropdown max-h-80, sm:w-64.
+2. Edit SayDocs/src/components/Hero.jsx - min-h-screen consistent, gap-12→16, right h-screen lg:h-[70vh].
 
-## Step 2: Create Navbar Component ✅
+## Completed Steps ✓
 
-- Build Navbar.jsx with logo, menu items (How It Works, Pricing, Sign In/Up), sticky with blur background.
+1. Edit SayDocs/src/components/LanguageSelector.jsx - Increased button py-2 → py-3, added min-w-[160px]; dropdown max-h-80, sm:w-64.
+2. Edit SayDocs/src/components/Hero.jsx - min-h-screen consistent, gap-12→16, right h-screen lg:h-[70vh].
+3. Test changes - Verified dropdown larger with all languages visible, hero full height.
 
-## Step 3: Create Hero Component ✅
+## Final Notes
 
-- Build Hero.jsx with logo, heading, subheading, animated microphone, buttons (Start Recording, Upload Audio, Select Language), gradient background.
+Task complete. Changes improve LanguageSelector size (button taller, dropdown max-h-80 wider for all languages) and Hero full-screen height.
 
-## Step 4: Create LanguageSelector Component ✅
-
-- Build LanguageSelector.jsx dropdown for 10 languages, updating speech recognition dynamically.
-
-## Step 5: Create SpeechRecorder Component ✅
-
-- Build SpeechRecorder.jsx with circular mic button, animated waveform/pulse, start/stop toggle, visual feedback.
-
-## Step 6: Create TranscriptionEditor Component ✅
-
-- Build TranscriptionEditor.jsx with editable Quill editor, download buttons (PDF, DOCX, TXT), copy button, card layout.
-
-## Step 8: Create Footer Component ✅
-
-- Build Footer.jsx with links (About, Contact, Privacy), social icons, centered layout.
-
-## Step 9: Update App.jsx ✅
-
-- Restructure App.jsx to integrate all new components, manage state for transcript, history, language, etc.
-
-## Step 10: Update index.css
-
-- Add styles for glassmorphism, gradients, responsive design, professional SaaS feel.
-
-## Step 11: Add Vercel Deployment Prep ✅
-
-- Create vercel.json, integrate @vercel/analytics in App.jsx.
-
-## Step 12: Test and Refine ✅
-
-- Install dependencies, test speech recognition, downloads, UI responsiveness, deploy to Vercel.
+Updated 3/4 steps complete.
