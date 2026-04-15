@@ -4,7 +4,7 @@ import Waves from './Waves';
 
 const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageChange }) => {
   return (
-    <div className="relative min-h-0 lg:min-h-screen flex flex-col lg:flex-row items-center justify-center px-8 lg:px-24 pt-10 pb-0 lg:pb-2 gap-12 overflow-hidden">
+    <div className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-8 lg:px-24 pt-10 pb-0 lg:pb-2 gap-16 overflow-hidden">
       {/* 3D Animated Background */}
       <Waves />
 
@@ -33,12 +33,12 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
               Upload Audio
             </button>
           </div>
-          <div className="relative z-60 flex justify-center">
+          <div className="relative z-20 flex justify-center">
             <LanguageSelector selectedLanguage={selectedLanguage} onLanguageChange={onLanguageChange} />
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-1/2 relative flex justify-center items-center h-[80px] lg:h-[500px]">
+      <div className="w-full lg:w-1/2 relative flex justify-center items-center h-screen lg:h-[70vh]">
         {/* Glass card visible on large screens */}
         <div className="hidden lg:block relative z-20 w-full max-w-lg glass-card rounded-xl overflow-hidden shadow-2xl border border-white/20 transform lg:rotate-2 lg:-translate-x-10">
           <div className="bg-white/5 border-b border-white/10 px-4 py-3 flex items-center gap-2">
@@ -66,7 +66,7 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
               <div className="h-3 w-2/3 bg-white/10 rounded-full"></div>
             </div>
             <div className="mt-8 pt-4 border-t border-white/5 flex justify-end items-center">
-              <div className="w-20 h-6 bg-primary rounded text-[8px] flex items-center justify-center fon t-bold">EXPORT DOC</div>
+              <div className="w-20 h-6 bg-primary rounded text-[8px] flex items-center justify-center font-bold">EXPORT DOC</div>
             </div>
           </div>
         </div>
@@ -75,17 +75,17 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
             <div className="absolute inset-0 mic-3d-texture rounded-full p-6 flex items-center justify-center border border-white/10">
               <div className="relative w-full h-full rounded-full overflow-hidden bg-[radial-gradient(circle_at_50%_50%,_#333_0%,_#000_100%)] flex items-center justify-center shadow-inner">
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '4px 4px' }}></div>
-                <Mic className="text-7xl md:text-9xl text-primary/80 drop-shadow-[0_0_15px_rgba(84,23,207,0.8)]" />
+                <Mic className="text Ascent text-7xl md:text-9xl text-primary/80 drop-shadow-[0_0_15px_rgba(84,23,207,0.8)]" />
                 <div className="absolute bottom-10 left-0 right-0 flex justify-center items-end gap-1 px-4 h-12">
                   <div className="w-1 bg-primary/60 rounded-full animate-[wave_1.2s_infinite]" style={{ height: '40%' }}></div>
-                  <div className="w-1 bg-primary rounded-full animate-[wave_0.8s_infinite]" style={{ height: '70%' }}></div>
+                  <div className="w-1 bg-primary Ascent rounded-full animate-[wave_0.8s_infinite]" style={{ height: '70%' }}></div>
                   <div className="w-1 bg-white rounded-full animate-[wave_1s_infinite]" style={{ height: '100%' }}></div>
                   <div className="w-1 bg-primary rounded-full animate-[wave_0.9s_infinite]" style={{ height: '60%' }}></div>
                   <div className="w-1 bg-primary/60 rounded-full animate-[wave_1.1s_infinite]" style={{ height: '30%' }}></div>
                 </div>
               </div>
             </div>
-            <div className="absolute inset-0 rounded-full border-4 border-white/5 pointer-events-none"></div>
+            <div className="absolute Ascent inset-0 rounded-full border-4 border-white/5 pointer-events-none"></div>
             <div className="absolute -inset-2 rounded-full border border-primary/30 blur-sm"></div>
           </div>
         </div>
@@ -96,3 +96,4 @@ const Hero = ({ onStartRecording, onUploadAudio, selectedLanguage, onLanguageCha
 };
 
 export default Hero;
+

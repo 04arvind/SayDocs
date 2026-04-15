@@ -7,7 +7,7 @@ import Hero from "./components/Hero";
 import SpeechRecorder from "./components/SpeechRecorder";
 import TranscriptionEditor from "./components/TranscriptionEditor";
 
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import { downloadAsPDF, downloadAsDOCX, downloadAsTXT } from "./utils/downloadUtils";
 
 inject();
@@ -103,7 +103,7 @@ const App = () => {
                     </div>
                 </div>
             )}
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
