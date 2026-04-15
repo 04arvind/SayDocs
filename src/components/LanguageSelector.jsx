@@ -17,29 +17,12 @@ const languageGroups = [
     ],
   },
   {
-    title: 'Northern Europe',
     languages: [
       { code: 'da-DK', name: 'Danish', countryCode: 'dk' },
       { code: 'sv-SE', name: 'Swedish', countryCode: 'se' },
       { code: 'no-NO', name: 'Norwegian', countryCode: 'no' },
       { code: 'is-IS', name: 'Icelandic', countryCode: 'is' },
       { code: 'fi-FI', name: 'Finnish', countryCode: 'fi' },
-    ],
-  },
-  {
-    title: 'Central & Eastern Europe',
-    languages: [
-      { code: 'pl-PL', name: 'Polish', countryCode: 'pl' },
-      { code: 'cs-CZ', name: 'Czech', countryCode: 'cz' },
-      { code: 'sk-SK', name: 'Slovak', countryCode: 'sk' },
-      { code: 'hu-HU', name: 'Hungarian', countryCode: 'hu' },
-      { code: 'ro-RO', name: 'Romanian', countryCode: 'ro' },
-      { code: 'hr-HR', name: 'Croatian', countryCode: 'hr' },
-      { code: 'sl-SI', name: 'Slovenian', countryCode: 'si' },
-      { code: 'lt-LT', name: 'Lithuanian', countryCode: 'lt' },
-      { code: 'lv-LV', name: 'Latvian', countryCode: 'lv' },
-      { code: 'et-EE', name: 'Estonian', countryCode: 'ee' },
-      { code: 'sq-AL', name: 'Albanian', countryCode: 'al' },
     ],
   },
 ];
